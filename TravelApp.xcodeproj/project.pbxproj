@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A717418C2DC2C12600D2F227 /* cityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717418B2DC2C12600D2F227 /* cityModel.swift */; };
+		A717418E2DC2C14300D2F227 /* homeModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717418D2DC2C14300D2F227 /* homeModelView.swift */; };
 		A78646D62DC200CA00073291 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78646D52DC200CA00073291 /* AppDelegate.swift */; };
 		A78646DA2DC200CA00073291 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78646D92DC200CA00073291 /* ViewController.swift */; };
 		A78646DD2DC200CA00073291 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A78646DB2DC200CA00073291 /* Main.storyboard */; };
@@ -43,6 +45,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A717418B2DC2C12600D2F227 /* cityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cityModel.swift; sourceTree = "<group>"; };
+		A717418D2DC2C14300D2F227 /* homeModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeModelView.swift; sourceTree = "<group>"; };
 		A78646D22DC200CA00073291 /* TravelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A78646D52DC200CA00073291 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A78646D92DC200CA00073291 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -154,6 +158,7 @@
 		A7B310E22DC22BD00051D42A /* model */ = {
 			isa = PBXGroup;
 			children = (
+				A717418B2DC2C12600D2F227 /* cityModel.swift */,
 			);
 			path = model;
 			sourceTree = "<group>";
@@ -161,6 +166,7 @@
 		A7B310E32DC22BE50051D42A /* ModelView */ = {
 			isa = PBXGroup;
 			children = (
+				A717418D2DC2C14300D2F227 /* homeModelView.swift */,
 			);
 			path = ModelView;
 			sourceTree = "<group>";
@@ -310,8 +316,10 @@
 				A7B310D42DC22B720051D42A /* getStartedVC.swift in Sources */,
 				A78646DA2DC200CA00073291 /* ViewController.swift in Sources */,
 				A7B310DC2DC22BA90051D42A /* homeVC.swift in Sources */,
+				A717418E2DC2C14300D2F227 /* homeModelView.swift in Sources */,
 				A7B310D82DC22B8C0051D42A /* signInVC.swift in Sources */,
 				A7B310E02DC22BCB0051D42A /* cityDetailsVC.swift in Sources */,
+				A717418C2DC2C12600D2F227 /* cityModel.swift in Sources */,
 				A78646D62DC200CA00073291 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
