@@ -15,6 +15,14 @@
 		A78646ED2DC200CE00073291 /* TravelAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78646EC2DC200CE00073291 /* TravelAppTests.swift */; };
 		A78646F72DC200CE00073291 /* TravelAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78646F62DC200CE00073291 /* TravelAppUITests.swift */; };
 		A78646F92DC200CE00073291 /* TravelAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78646F82DC200CE00073291 /* TravelAppUITestsLaunchTests.swift */; };
+		A7B310D42DC22B720051D42A /* getStartedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B310D22DC22B720051D42A /* getStartedVC.swift */; };
+		A7B310D52DC22B720051D42A /* getStartedVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7B310D32DC22B720051D42A /* getStartedVC.xib */; };
+		A7B310D82DC22B8C0051D42A /* signInVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B310D62DC22B8C0051D42A /* signInVC.swift */; };
+		A7B310D92DC22B8C0051D42A /* signInVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7B310D72DC22B8C0051D42A /* signInVC.xib */; };
+		A7B310DC2DC22BA90051D42A /* homeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B310DA2DC22BA90051D42A /* homeVC.swift */; };
+		A7B310DD2DC22BA90051D42A /* homeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7B310DB2DC22BA90051D42A /* homeVC.xib */; };
+		A7B310E02DC22BCB0051D42A /* cityDetailsVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B310DE2DC22BCB0051D42A /* cityDetailsVC.swift */; };
+		A7B310E12DC22BCB0051D42A /* cityDetailsVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7B310DF2DC22BCB0051D42A /* cityDetailsVC.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +55,14 @@
 		A78646F22DC200CE00073291 /* TravelAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A78646F62DC200CE00073291 /* TravelAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelAppUITests.swift; sourceTree = "<group>"; };
 		A78646F82DC200CE00073291 /* TravelAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		A7B310D22DC22B720051D42A /* getStartedVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = getStartedVC.swift; sourceTree = "<group>"; };
+		A7B310D32DC22B720051D42A /* getStartedVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = getStartedVC.xib; sourceTree = "<group>"; };
+		A7B310D62DC22B8C0051D42A /* signInVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = signInVC.swift; sourceTree = "<group>"; };
+		A7B310D72DC22B8C0051D42A /* signInVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = signInVC.xib; sourceTree = "<group>"; };
+		A7B310DA2DC22BA90051D42A /* homeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeVC.swift; sourceTree = "<group>"; };
+		A7B310DB2DC22BA90051D42A /* homeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = homeVC.xib; sourceTree = "<group>"; };
+		A7B310DE2DC22BCB0051D42A /* cityDetailsVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cityDetailsVC.swift; sourceTree = "<group>"; };
+		A7B310DF2DC22BCB0051D42A /* cityDetailsVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = cityDetailsVC.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,12 +113,23 @@
 		A78646D42DC200CA00073291 /* TravelApp */ = {
 			isa = PBXGroup;
 			children = (
+				A7B310E42DC22BF30051D42A /* cell */,
+				A7B310E32DC22BE50051D42A /* ModelView */,
+				A7B310E22DC22BD00051D42A /* model */,
 				A78646D52DC200CA00073291 /* AppDelegate.swift */,
 				A78646D92DC200CA00073291 /* ViewController.swift */,
 				A78646DB2DC200CA00073291 /* Main.storyboard */,
 				A78646DE2DC200CE00073291 /* Assets.xcassets */,
 				A78646E02DC200CE00073291 /* LaunchScreen.storyboard */,
 				A78646E32DC200CE00073291 /* Info.plist */,
+				A7B310D22DC22B720051D42A /* getStartedVC.swift */,
+				A7B310D32DC22B720051D42A /* getStartedVC.xib */,
+				A7B310D62DC22B8C0051D42A /* signInVC.swift */,
+				A7B310D72DC22B8C0051D42A /* signInVC.xib */,
+				A7B310DA2DC22BA90051D42A /* homeVC.swift */,
+				A7B310DB2DC22BA90051D42A /* homeVC.xib */,
+				A7B310DE2DC22BCB0051D42A /* cityDetailsVC.swift */,
+				A7B310DF2DC22BCB0051D42A /* cityDetailsVC.xib */,
 			);
 			path = TravelApp;
 			sourceTree = "<group>";
@@ -122,6 +149,27 @@
 				A78646F82DC200CE00073291 /* TravelAppUITestsLaunchTests.swift */,
 			);
 			path = TravelAppUITests;
+			sourceTree = "<group>";
+		};
+		A7B310E22DC22BD00051D42A /* model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		A7B310E32DC22BE50051D42A /* ModelView */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ModelView;
+			sourceTree = "<group>";
+		};
+		A7B310E42DC22BF30051D42A /* cell */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = cell;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -228,7 +276,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7B310E12DC22BCB0051D42A /* cityDetailsVC.xib in Resources */,
 				A78646E22DC200CE00073291 /* LaunchScreen.storyboard in Resources */,
+				A7B310D92DC22B8C0051D42A /* signInVC.xib in Resources */,
+				A7B310D52DC22B720051D42A /* getStartedVC.xib in Resources */,
+				A7B310DD2DC22BA90051D42A /* homeVC.xib in Resources */,
 				A78646DF2DC200CE00073291 /* Assets.xcassets in Resources */,
 				A78646DD2DC200CA00073291 /* Main.storyboard in Resources */,
 			);
@@ -255,7 +307,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A7B310D42DC22B720051D42A /* getStartedVC.swift in Sources */,
 				A78646DA2DC200CA00073291 /* ViewController.swift in Sources */,
+				A7B310DC2DC22BA90051D42A /* homeVC.swift in Sources */,
+				A7B310D82DC22B8C0051D42A /* signInVC.swift in Sources */,
+				A7B310E02DC22BCB0051D42A /* cityDetailsVC.swift in Sources */,
 				A78646D62DC200CA00073291 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
