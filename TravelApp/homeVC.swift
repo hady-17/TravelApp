@@ -8,6 +8,9 @@
 import UIKit
 
 class homeVC: UIViewController {
+    let vm = viewModel()
+
+    @IBOutlet weak var ticketView: UIView!
     
     private func setupBackgroundImage(){
         if let image = UIImage(named: "teal-color-solid-background-1920x1080"){viewContainer.backgroundColor = UIColor(patternImage: image)}
@@ -18,12 +21,20 @@ class homeVC: UIViewController {
         gradient.colors = [UIColor.white.withAlphaComponent(1).cgColor,
                            UIColor.white.withAlphaComponent(0).cgColor,
                            ]
-        gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
-        gradient.endPoint = CGPoint(x: 0.5, y: 1.0)
-        viewContainer.layer.mask = gradient
+        gradient.startPoint = CGPoint(x: 0.5, y: 1.0)
+        gradient.endPoint = CGPoint(x: 0.5, y: 0.0)
+
+//        viewContainer.layer.mask = gradient
+        viewContainer.layer.insertSublayer(gradient, at: 0)
+
             
     }
-    @IBOutlet weak var viewContainer: UIView!
+    @IBOutlet weak var viewContainer: UIView!{
+        didSet{
+            setupBackgroundImage()
+        }
+    }
+    
     
     @IBOutlet weak var tabBarAccountButton: UITabBarItem!
     {
@@ -57,15 +68,56 @@ class homeVC: UIViewController {
             TabBarHomeButton.selectedImage = UIImage(systemName: "house.fill")
         }
     }
+    @IBOutlet weak var CitiesCollectionView: UICollectionView!
+    {
+        didSet{
+            let cell = UINib(nibName: "citiesCell", bundle: nil)
+            CitiesCollectionView.register(cell, forCellWithReuseIdentifier: "cityCell")
+            CitiesCollectionView.delegate = self
+            CitiesCollectionView.dataSource = self
+            
+        }
+    }
     @IBOutlet weak var tabBar: UITabBar!
     @IBOutlet weak var SearchBar: UISearchBar!
+    
+    @IBOutlet weak var stackButtons: UIStackView!
+   
+   
+    @IBOutlet weak var trainButton: UIButton!
+
+    @IBOutlet weak var busButton: UIButton!
+    @IBOutlet weak var ferryButton: UIButton!
+    @IBOutlet weak var hotelButton: UIButton!
+    @IBOutlet weak var flyButton: UIButton!
+    @IBOutlet weak var flyLabel: UILabel!
+    @IBOutlet weak var hotellabel: UILabel!
+    @IBOutlet weak var trainLabel: UILabel!
+    @IBOutlet weak var ferryLabel: UILabel!
+    @IBOutlet weak var busLabel: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupBackgroundImage()
+        view.bringSubviewToFront(stackButtons)
+        view.bringSubviewToFront(trainButton)
+        vm.didGetData = {[weak self] mess in
+            DispatchQueue.main.async {
+                self?.CitiesCollectionView.reloadData()
+            }
+        }
+        vm.didGetError = {[weak self] mess in
+            DispatchQueue.main.async {
+                let alertvc = UIAlertController()
+                alertvc.message = mess
+                self?.present(alertvc,animated: true)
+            }
+        }
         // Do any additional setup after loading the view.
+        vm.fetchData()
     }
 
+
 }
+
 
 extension homeVC : UITabBarDelegate {
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {

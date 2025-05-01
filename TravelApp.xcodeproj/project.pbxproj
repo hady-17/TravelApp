@@ -9,6 +9,10 @@
 /* Begin PBXBuildFile section */
 		A717418C2DC2C12600D2F227 /* cityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717418B2DC2C12600D2F227 /* cityModel.swift */; };
 		A717418E2DC2C14300D2F227 /* homeModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717418D2DC2C14300D2F227 /* homeModelView.swift */; };
+		A765266A2DC3F30500206D8A /* homeVC+collectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76526692DC3F30400206D8A /* homeVC+collectionView.swift */; };
+		A765266C2DC3F93A00206D8A /* homeVC+elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765266B2DC3F93A00206D8A /* homeVC+elements.swift */; };
+		A76526712DC4019600206D8A /* citiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765266F2DC4019600206D8A /* citiesCell.swift */; };
+		A76526722DC4019600206D8A /* citiesCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A76526702DC4019600206D8A /* citiesCell.xib */; };
 		A78646D62DC200CA00073291 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78646D52DC200CA00073291 /* AppDelegate.swift */; };
 		A78646DA2DC200CA00073291 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78646D92DC200CA00073291 /* ViewController.swift */; };
 		A78646DD2DC200CA00073291 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A78646DB2DC200CA00073291 /* Main.storyboard */; };
@@ -47,6 +51,10 @@
 /* Begin PBXFileReference section */
 		A717418B2DC2C12600D2F227 /* cityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cityModel.swift; sourceTree = "<group>"; };
 		A717418D2DC2C14300D2F227 /* homeModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeModelView.swift; sourceTree = "<group>"; };
+		A76526692DC3F30400206D8A /* homeVC+collectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "homeVC+collectionView.swift"; sourceTree = "<group>"; };
+		A765266B2DC3F93A00206D8A /* homeVC+elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "homeVC+elements.swift"; sourceTree = "<group>"; };
+		A765266F2DC4019600206D8A /* citiesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = citiesCell.swift; sourceTree = "<group>"; };
+		A76526702DC4019600206D8A /* citiesCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = citiesCell.xib; sourceTree = "<group>"; };
 		A78646D22DC200CA00073291 /* TravelApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A78646D52DC200CA00073291 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A78646D92DC200CA00073291 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -134,6 +142,8 @@
 				A7B310DB2DC22BA90051D42A /* homeVC.xib */,
 				A7B310DE2DC22BCB0051D42A /* cityDetailsVC.swift */,
 				A7B310DF2DC22BCB0051D42A /* cityDetailsVC.xib */,
+				A76526692DC3F30400206D8A /* homeVC+collectionView.swift */,
+				A765266B2DC3F93A00206D8A /* homeVC+elements.swift */,
 			);
 			path = TravelApp;
 			sourceTree = "<group>";
@@ -174,6 +184,8 @@
 		A7B310E42DC22BF30051D42A /* cell */ = {
 			isa = PBXGroup;
 			children = (
+				A765266F2DC4019600206D8A /* citiesCell.swift */,
+				A76526702DC4019600206D8A /* citiesCell.xib */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -282,6 +294,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A76526722DC4019600206D8A /* citiesCell.xib in Resources */,
 				A7B310E12DC22BCB0051D42A /* cityDetailsVC.xib in Resources */,
 				A78646E22DC200CE00073291 /* LaunchScreen.storyboard in Resources */,
 				A7B310D92DC22B8C0051D42A /* signInVC.xib in Resources */,
@@ -313,13 +326,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A765266C2DC3F93A00206D8A /* homeVC+elements.swift in Sources */,
 				A7B310D42DC22B720051D42A /* getStartedVC.swift in Sources */,
+				A76526712DC4019600206D8A /* citiesCell.swift in Sources */,
 				A78646DA2DC200CA00073291 /* ViewController.swift in Sources */,
 				A7B310DC2DC22BA90051D42A /* homeVC.swift in Sources */,
 				A717418E2DC2C14300D2F227 /* homeModelView.swift in Sources */,
 				A7B310D82DC22B8C0051D42A /* signInVC.swift in Sources */,
 				A7B310E02DC22BCB0051D42A /* cityDetailsVC.swift in Sources */,
 				A717418C2DC2C12600D2F227 /* cityModel.swift in Sources */,
+				A765266A2DC3F30500206D8A /* homeVC+collectionView.swift in Sources */,
 				A78646D62DC200CA00073291 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
