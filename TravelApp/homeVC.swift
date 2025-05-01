@@ -8,7 +8,23 @@
 import UIKit
 
 class homeVC: UIViewController {
+    
+    private func setupBackgroundImage(){
+        if let image = UIImage(named: "teal-color-solid-background-1920x1080"){viewContainer.backgroundColor = UIColor(patternImage: image)}
 
+      //  viewContainer.alpha = 0.7
+        let gradient = CAGradientLayer()
+        gradient.frame = viewContainer.bounds
+        gradient.colors = [UIColor.white.withAlphaComponent(1).cgColor,
+                           UIColor.white.withAlphaComponent(0).cgColor,
+                           ]
+        gradient.startPoint = CGPoint(x: 0.5, y: 0.0)
+        gradient.endPoint = CGPoint(x: 0.5, y: 1.0)
+        viewContainer.layer.mask = gradient
+            
+    }
+    @IBOutlet weak var viewContainer: UIView!
+    
     @IBOutlet weak var tabBarAccountButton: UITabBarItem!
     {
         didSet{
@@ -45,7 +61,7 @@ class homeVC: UIViewController {
     @IBOutlet weak var SearchBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setupBackgroundImage()
         // Do any additional setup after loading the view.
     }
 
