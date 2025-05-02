@@ -78,8 +78,27 @@ class homeVC: UIViewController {
             
         }
     }
+    
+    @IBOutlet weak var searchTableView: UITableView!
+    {
+        didSet{
+            let cell = UINib(nibName: "searchTableCell", bundle: nil)
+            searchTableView.register(cell, forCellReuseIdentifier: "searchTableCellId")
+            searchTableView.isHidden = true
+            searchTableView.dataSource = self
+            searchTableView.delegate = self
+        }
+    }
+    
     @IBOutlet weak var tabBar: UITabBar!
-    @IBOutlet weak var SearchBar: UISearchBar!
+    @IBOutlet weak var SearchBar: UISearchBar!{
+        didSet{
+//            SearchBar.showsCancelButton = true
+            SearchBar.delegate = self
+            SearchBar.isUserInteractionEnabled = true
+
+        }
+    }
     
     @IBOutlet weak var stackButtons: UIStackView!
    
@@ -111,8 +130,18 @@ class homeVC: UIViewController {
                 self?.present(alertvc,animated: true)
             }
         }
+        view.bringSubviewToFront(searchTableView)
+
+                // Bind ViewModel update callback
+                vm.onResultsUpdated = { [weak self] in
+                    DispatchQueue.main.async {
+                        self?.searchTableView.reloadData()
+                    }
+                }
         // Do any additional setup after loading the view.
         vm.fetchData()
+        view.bringSubviewToFront(SearchBar)
+
     }
 
 

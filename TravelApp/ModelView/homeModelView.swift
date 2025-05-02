@@ -12,6 +12,7 @@ class viewModel {
      var cityData: [DataItem]?
     var didGetError: ((String) -> Void)?
     var didGetData: ((String) -> Void)?
+    var onResultsUpdated:(()->Void)?
     
     func fetchData() {
         print("fetch....")
@@ -63,4 +64,30 @@ class viewModel {
         }
         return Data[index]
     }
+    
+    var filteredDestinations: [DataItem] = []
+//    func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
+//        searchTableView.isHidden = false
+//        filteredDestinations = allDestinations
+//        searchTableView.reloadData()
+//    }
+    func filterDestinations(with query: String) {
+        if query.isEmpty {
+            if let data = cityData {
+                filteredDestinations = data
+            }
+            
+        } else {
+            if let data = cityData {
+                filteredDestinations = data.filter {
+                    $0.title!.lowercased().contains(query.lowercased())
+                }
+            }
+            
+        }
+        onResultsUpdated?()
+    }
+
+
+    
 }

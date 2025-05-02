@@ -19,6 +19,11 @@ class citiesCell: UICollectionViewCell {
     @IBOutlet weak var cityLabel: UILabel!
     @IBOutlet weak var countryLabel: UILabel!
     @IBOutlet weak var imageView: UIImageView!
+    {
+        didSet{
+            imageView.image = UIImage(systemName: "person")
+        }
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
