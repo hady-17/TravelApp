@@ -4,7 +4,7 @@ class DescriptionView: UIView {
     private let descriptionLabel = UILabel()
     private let reviewLabel = UILabel()
     private let detailedDescriptionLabel = UILabel()
-    private let reviewTextView = UITextView()
+    private let reviewTextView = UILabel()
     private let readMoreButton = UIButton(type: .system)
     
     private var isExpanded = false
@@ -52,15 +52,15 @@ class DescriptionView: UIView {
         // Detailed Description Label
         detailedDescriptionLabel.font = UIFont.systemFont(ofSize: 16)
         detailedDescriptionLabel.textColor = .black
-        detailedDescriptionLabel.numberOfLines = 2
+        detailedDescriptionLabel.numberOfLines = 4
         detailedDescriptionLabel.lineBreakMode = .byTruncatingTail
 
         // Review Text View
-        reviewTextView.isEditable = false
         reviewTextView.font = UIFont.systemFont(ofSize: 16)
         reviewTextView.textColor = .black
         reviewTextView.isHidden = true
-        reviewTextView.backgroundColor = .lightGray // For debugging visibility
+        reviewTextView.numberOfLines = 0
+                
 
         // Read More Button
         readMoreButton.setTitle("Read more", for: .normal)
@@ -103,34 +103,26 @@ class DescriptionView: UIView {
     }
 
     @objc private func showDescription() {
-        print("Description tapped")
-        UIView.animate(withDuration: 0.3) {
-            self.detailedDescriptionLabel.isHidden = false
-            self.readMoreButton.isHidden = false
-            self.reviewTextView.isHidden = true
-
-            self.descriptionLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-            self.descriptionLabel.textColor = .black
-            self.reviewLabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-            self.reviewLabel.textColor = .gray
-            
-            self.layoutIfNeeded()
-        }
+        detailedDescriptionLabel.isHidden = false
+        readMoreButton.isHidden = false
+        reviewTextView.isHidden = true
+        
+        descriptionLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        descriptionLabel.textColor = .black
+        reviewLabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        reviewLabel.textColor = .gray
     }
 
     @objc private func showReview() {
-        print("Review tapped")
-        UIView.animate(withDuration: 0.3) {
-            self.detailedDescriptionLabel.isHidden = true
-            self.readMoreButton.isHidden = true
-            self.reviewTextView.isHidden = false
-
-            self.reviewLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
-            self.reviewLabel.textColor = .black
-            self.descriptionLabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
-            self.descriptionLabel.textColor = .gray
-            
-            self.layoutIfNeeded()
-        }
+        detailedDescriptionLabel.isHidden = true
+        readMoreButton.isHidden = true
+        reviewTextView.isHidden = false 
+        
+        reviewLabel.font = UIFont.systemFont(ofSize: 16, weight: .bold)
+        reviewLabel.textColor = .black
+        descriptionLabel.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        descriptionLabel.textColor = .gray
+        self.layoutIfNeeded()
     }
+
 }
