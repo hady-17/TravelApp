@@ -9,14 +9,6 @@ import Foundation
 import UIKit
 extension homeVC :  UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate{
     
-
-
-        
-//        searchBar.delegate = self
-//        tableView.delegate = self
-//        tableView.dataSource = self
-//
-//        tableView.isHidden = true
     func searchBarTextDidBeginEditing(_ searchBar: UISearchBar) {
         SearchBar.showsCancelButton = true
         
@@ -36,15 +28,6 @@ extension homeVC :  UITableViewDelegate,UITableViewDataSource,UISearchBarDelegat
         searchTableView.isHidden = true
     }
 
-
-
-//
-//    // Optional: Handle selection
-//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-//        searchBar.text = filteredDestinations[indexPath.row]
-//        tableView.isHidden = true
-//        searchBar.resignFirstResponder()
-//    }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         vm.filteredDestinations.count
     }

@@ -96,10 +96,10 @@ class homeVC: UIViewController {
     @IBOutlet weak var trainLabel: UILabel!
     @IBOutlet weak var ferryLabel: UILabel!
     @IBOutlet weak var busLabel: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.bringSubviewToFront(stackButtons)
-        view.bringSubviewToFront(trainButton)
+        
         vm.didGetData = {[weak self] mess in
             DispatchQueue.main.async {
                 self?.CitiesCollectionView.reloadData()
@@ -113,11 +113,11 @@ class homeVC: UIViewController {
                 self?.present(alertvc,animated: true)
             }
         }
-        view.bringSubviewToFront(searchTableView)
+        
 
                 // Bind ViewModel update callback
                 vm.onResultsUpdated = { [weak self] in
-                    DispatchQueue.main.async {
+                    DispatchQueue.main.async { [self] in
                         self?.searchTableView.reloadData()
                     }
                 }
@@ -125,6 +125,7 @@ class homeVC: UIViewController {
         let ticketView = FlightTicketView()
                 ticketView.translatesAutoresizingMaskIntoConstraints = false
                 view.addSubview(ticketView)
+        
 
                 NSLayoutConstraint.activate([
                     ticketView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
@@ -134,9 +135,11 @@ class homeVC: UIViewController {
                     ticketView.topAnchor.constraint(equalTo: SearchBar.bottomAnchor, constant: 10)
                 ])
         vm.fetchData()
+        
+        view.bringSubviewToFront(stackButtons)
+        view.bringSubviewToFront(trainButton)
         view.bringSubviewToFront(SearchBar)
         view.bringSubviewToFront(searchTableView)
-        
 
     }
 

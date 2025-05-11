@@ -82,7 +82,7 @@ extension homeVC :UICollectionViewDelegate,UICollectionViewDataSource,UICollecti
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let size : CGSize
         if collectionView.tag == 1{
-            size = CGSize(width: 150, height: 170)}
+            size = CGSize(width: 150, height: 145)}
         else {
            size = CGSize(width: 380, height: 80)
         }
