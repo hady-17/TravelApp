@@ -139,16 +139,31 @@ class homeVC: UIViewController {
                     }
                 }
         // Do any additional setup after loading the view.
+        let ticketView = FlightTicketView()
+                ticketView.translatesAutoresizingMaskIntoConstraints = false
+                view.addSubview(ticketView)
+
+                NSLayoutConstraint.activate([
+                    ticketView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+//                    ticketView.centerYAnchor.constraint(equalTo: view.centerYAnchor),
+                    ticketView.widthAnchor.constraint(equalToConstant: 300),
+                    ticketView.heightAnchor.constraint(equalToConstant: 120),
+                    ticketView.topAnchor.constraint(equalTo: SearchBar.bottomAnchor, constant: 10)
+                ])
         vm.fetchData()
         view.bringSubviewToFront(SearchBar)
+        view.bringSubviewToFront(searchTableView)
+        
 
     }
+
+    
 
 
 }
 
 
-extension homeVC : UITabBarDelegate {
+extension homeVC : UITabBarDelegate{
     func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem) {
         if item.tag == 1{
             print("home")
