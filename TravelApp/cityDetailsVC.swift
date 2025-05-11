@@ -8,7 +8,7 @@
 import UIKit
 
 class cityDetailsVC: UIViewController {
-
+    var Data : DataItem?
     override func viewDidLoad() {
         super.viewDidLoad()
 

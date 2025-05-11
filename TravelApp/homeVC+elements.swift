@@ -57,6 +57,13 @@ extension homeVC :  UITableViewDelegate,UITableViewDataSource,UISearchBarDelegat
     func numberOfSections(in tableView: UITableView) -> Int {
         1
     }
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+        let nextVC = cityDetailsVC()
+        nextVC.Data = vm.cityData?[indexPath.row]
+        nextVC.modalPresentationStyle = .fullScreen
+        present(nextVC, animated: true)
+    }
     
     
 }

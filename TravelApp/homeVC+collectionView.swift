@@ -88,6 +88,22 @@ extension homeVC :UICollectionViewDelegate,UICollectionViewDataSource,UICollecti
         }
         return size
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if collectionView.tag == 1{
+            let nextVC = cityDetailsVC()
+            nextVC.Data = vm.cityData?[indexPath.row]
+            nextVC.modalPresentationStyle = .fullScreen
+            present(nextVC, animated: true)
+           // navigationController?.pushViewController(nextVC, animated: true)
+            
+        }
+        else{
+            let nextVC = cityDetailsVC()
+            nextVC.Data = vm.cityData?[indexPath.row]
+            nextVC.modalPresentationStyle = .fullScreen
+            present(nextVC, animated: true)
+        }
+    }
     
     
 }
