@@ -39,6 +39,7 @@ class homeVC: UIViewController {
     @IBOutlet weak var tabBarAccountButton: UITabBarItem!
     {
         didSet{
+            
             tabBarAccountButton.tag = 4
             tabBarAccountButton.image = UIImage(systemName: "person.circle")
             tabBarAccountButton.selectedImage = UIImage(systemName: "person.circle.fill")
@@ -73,10 +74,25 @@ class homeVC: UIViewController {
         didSet{
             let cell = UINib(nibName: "citiesCell", bundle: nil)
             CitiesCollectionView.register(cell, forCellWithReuseIdentifier: "cityCell")
+            
+            CitiesCollectionView.tag = 1
             CitiesCollectionView.delegate = self
             CitiesCollectionView.dataSource = self
             
         }
+    }
+    
+    
+    @IBOutlet weak var hotelsCollectionView: UICollectionView!
+    {
+        didSet{
+            let cell = UINib(nibName: "citiesCell", bundle: nil)
+            hotelsCollectionView.register(cell, forCellWithReuseIdentifier: "cityCell")
+            hotelsCollectionView.tag = 2
+            hotelsCollectionView.dataSource = self
+            hotelsCollectionView.delegate = self
+    }
+        
     }
     
     @IBOutlet weak var searchTableView: UITableView!
@@ -121,6 +137,7 @@ class homeVC: UIViewController {
         vm.didGetData = {[weak self] mess in
             DispatchQueue.main.async {
                 self?.CitiesCollectionView.reloadData()
+                self?.hotelsCollectionView.reloadData()
             }
         }
         vm.didGetError = {[weak self] mess in

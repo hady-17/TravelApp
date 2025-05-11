@@ -21,6 +21,7 @@
                 <outlet property="flyLabel" destination="Sx6-ic-Dm7" id="r7Q-X5-02i"/>
                 <outlet property="hotelButton" destination="byD-JU-xdU" id="YkM-hQ-4WB"/>
                 <outlet property="hotellabel" destination="UW4-xK-Ao7" id="5hP-nX-3Wo"/>
+                <outlet property="hotelsCollectionView" destination="IPv-eC-4l5" id="dqo-Rm-VUc"/>
                 <outlet property="searchTableView" destination="Frd-6K-5s4" id="jgT-6M-IbX"/>
                 <outlet property="stackButtons" destination="Pm4-oN-m9W" id="jOG-3e-nbX"/>
                 <outlet property="tabBar" destination="B7C-XZ-sYS" id="Q6w-bI-D6X"/>
@@ -36,7 +37,7 @@
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <rect key="frame" x="0.0" y="0.0" width="393" height="1000"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="td4-EH-jz4">
@@ -208,7 +209,7 @@
                     </constraints>
                 </view>
                 <tabBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7C-XZ-sYS">
-                    <rect key="frame" x="0.0" y="768" width="393" height="50"/>
+                    <rect key="frame" x="0.0" y="916" width="393" height="50"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Bcw-RK-qMf"/>
@@ -262,7 +263,7 @@
                     </collectionViewFlowLayout>
                 </collectionView>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hotels Recommended for You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1I-nx-9If">
-                    <rect key="frame" x="25" y="648" width="170" height="14.333333333333371"/>
+                    <rect key="frame" x="30" y="648" width="170" height="14.333333333333371"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="170" id="xGd-Dk-n0F"/>
                     </constraints>
@@ -282,20 +283,34 @@
                         <action selector="SeeAllHotels:" destination="-1" eventType="touchUpInside" id="7w9-18-w1R"/>
                     </connections>
                 </button>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="IPv-eC-4l5">
+                    <rect key="frame" x="30" y="670" width="333" height="246"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="N5Z-aj-o34">
+                        <size key="itemSize" width="128" height="128"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                </collectionView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="B1I-nx-9If" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="5dB-qk-nuR"/>
+                <constraint firstItem="B7C-XZ-sYS" firstAttribute="top" secondItem="IPv-eC-4l5" secondAttribute="bottom" id="1yN-EM-5Qz"/>
+                <constraint firstItem="B1I-nx-9If" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="5dB-qk-nuR"/>
                 <constraint firstItem="B7C-XZ-sYS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5hs-4O-Paz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="B7C-XZ-sYS" secondAttribute="bottom" id="8F2-Wa-QF6"/>
                 <constraint firstItem="SSa-aJ-B9w" firstAttribute="top" secondItem="ABE-S1-i5c" secondAttribute="bottom" constant="8" id="BEs-gX-pcp"/>
                 <constraint firstItem="B1I-nx-9If" firstAttribute="top" secondItem="SSa-aJ-B9w" secondAttribute="bottom" constant="5" id="HOO-lB-7wC"/>
                 <constraint firstItem="gGG-bw-7uY" firstAttribute="top" secondItem="SSa-aJ-B9w" secondAttribute="bottom" constant="5" id="JFD-fG-5qd"/>
                 <constraint firstItem="td4-EH-jz4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="M8D-eI-Z7R"/>
+                <constraint firstItem="IPv-eC-4l5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="MiS-mX-bBP"/>
                 <constraint firstItem="SSa-aJ-B9w" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="NTd-Ur-aA9"/>
                 <constraint firstItem="ISU-fv-UDo" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-30" id="RLc-3T-C3c"/>
+                <constraint firstItem="IPv-eC-4l5" firstAttribute="top" secondItem="gGG-bw-7uY" secondAttribute="bottom" constant="2" id="Y3f-oV-eYH"/>
                 <constraint firstItem="td4-EH-jz4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="YsV-eI-2uC"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IPv-eC-4l5" secondAttribute="trailing" constant="30" id="b36-cC-63v"/>
                 <constraint firstItem="ISU-fv-UDo" firstAttribute="top" secondItem="td4-EH-jz4" secondAttribute="bottom" constant="25" id="bMH-No-3ft"/>
                 <constraint firstItem="td4-EH-jz4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dHa-mr-X2Y"/>
                 <constraint firstItem="ABE-S1-i5c" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="fN9-iL-G44"/>
@@ -304,6 +319,7 @@
                 <constraint firstItem="ABE-S1-i5c" firstAttribute="top" secondItem="td4-EH-jz4" secondAttribute="bottom" constant="25" id="wzc-eT-7QA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SSa-aJ-B9w" secondAttribute="trailing" constant="30" id="yjS-Iz-n30"/>
             </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="54.198473282442748" y="-11.267605633802818"/>
         </view>
         <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Frd-6K-5s4">
