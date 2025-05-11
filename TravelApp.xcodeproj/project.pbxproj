@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		63ADA2F62DD11F5A001F9005 /* Localize_Swift in Frameworks */ = {isa = PBXBuildFile; productRef = 63ADA2F52DD11F5A001F9005 /* Localize_Swift */; };
 		A78646D62DC200CA00073291 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78646D52DC200CA00073291 /* AppDelegate.swift */; };
 		A78646DA2DC200CA00073291 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A78646D92DC200CA00073291 /* ViewController.swift */; };
 		A78646DD2DC200CA00073291 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A78646DB2DC200CA00073291 /* Main.storyboard */; };
@@ -70,6 +71,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				63ADA2F62DD11F5A001F9005 /* Localize_Swift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -188,6 +190,9 @@
 			dependencies = (
 			);
 			name = TravelApp;
+			packageProductDependencies = (
+				63ADA2F52DD11F5A001F9005 /* Localize_Swift */,
+			);
 			productName = TravelApp;
 			productReference = A78646D22DC200CA00073291 /* TravelApp.app */;
 			productType = "com.apple.product-type.application";
@@ -260,6 +265,9 @@
 				Base,
 			);
 			mainGroup = A78646C92DC200CA00073291;
+			packageReferences = (
+				63ADA2F42DD11F5A001F9005 /* XCRemoteSwiftPackageReference "Localize-Swift" */,
+			);
 			productRefGroup = A78646D32DC200CA00073291 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -648,6 +656,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		63ADA2F42DD11F5A001F9005 /* XCRemoteSwiftPackageReference "Localize-Swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/marmelroy/Localize-Swift.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 3.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		63ADA2F52DD11F5A001F9005 /* Localize_Swift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 63ADA2F42DD11F5A001F9005 /* XCRemoteSwiftPackageReference "Localize-Swift" */;
+			productName = Localize_Swift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = A78646CA2DC200CA00073291 /* Project object */;
 }
