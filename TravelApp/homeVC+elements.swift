@@ -63,6 +63,8 @@ extension homeVC :  UITableViewDelegate,UITableViewDataSource,UISearchBarDelegat
         nextVC.Data = vm.cityData?[indexPath.row]
         nextVC.modalPresentationStyle = .fullScreen
         present(nextVC, animated: true)
+        
+        
     }
     
     
