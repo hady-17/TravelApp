@@ -12,7 +12,6 @@
             <connections>
                 <outlet property="CitiesCollectionView" destination="SSa-aJ-B9w" id="th5-Vw-NjP"/>
                 <outlet property="SearchBar" destination="9hH-PA-NyF" id="bur-ZW-VZ2"/>
-                <outlet property="TabBarHomeButton" destination="euG-9g-Acz" id="M85-OH-RPJ"/>
                 <outlet property="busButton" destination="OKQ-VM-bvC" id="0d9-8v-PWV"/>
                 <outlet property="busLabel" destination="UFq-cN-y48" id="K4z-s7-ocS"/>
                 <outlet property="ferryButton" destination="wj5-5t-9uZ" id="2EK-ab-UPd"/>
@@ -24,10 +23,6 @@
                 <outlet property="hotelsCollectionView" destination="IPv-eC-4l5" id="dqo-Rm-VUc"/>
                 <outlet property="searchTableView" destination="Frd-6K-5s4" id="jgT-6M-IbX"/>
                 <outlet property="stackButtons" destination="Pm4-oN-m9W" id="jOG-3e-nbX"/>
-                <outlet property="tabBar" destination="B7C-XZ-sYS" id="Q6w-bI-D6X"/>
-                <outlet property="tabBarAccountButton" destination="ENp-Tc-Gn0" id="6iQ-D3-X62"/>
-                <outlet property="tabBarDealsButton" destination="3B6-K1-HKj" id="MDy-0q-paA"/>
-                <outlet property="tabBarOrdersButton" destination="fm3-74-nTL" id="sR6-Wf-qut"/>
                 <outlet property="ticketView" destination="Ult-79-6lY" id="9fj-yb-AMb"/>
                 <outlet property="trainButton" destination="5wx-49-ajr" id="xC0-FF-cOg"/>
                 <outlet property="trainLabel" destination="WVL-2B-Z92" id="NEx-hf-qZ6"/>
@@ -208,25 +203,6 @@
                         <constraint firstItem="Ult-79-6lY" firstAttribute="leading" secondItem="td4-EH-jz4" secondAttribute="leading" constant="20" id="x8w-ml-OfW"/>
                     </constraints>
                 </view>
-                <tabBar contentMode="scaleToFill" barStyle="black" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B7C-XZ-sYS">
-                    <rect key="frame" x="0.0" y="916" width="393" height="50"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <constraints>
-                        <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="Bcw-RK-qMf"/>
-                        <constraint firstAttribute="height" constant="50" id="XJF-0l-rBb"/>
-                    </constraints>
-                    <items>
-                        <tabBarItem title="Home" image="house" catalog="system" selectedImage="homekit" id="euG-9g-Acz">
-                            <color key="badgeColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </tabBarItem>
-                        <tabBarItem title="Orders" image="ticket" catalog="system" id="fm3-74-nTL"/>
-                        <tabBarItem title="Deals" image="percent.ar" catalog="system" id="3B6-K1-HKj"/>
-                        <tabBarItem title="Account" image="person.circle" catalog="system" id="ENp-Tc-Gn0"/>
-                    </items>
-                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <color key="selectedImageTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                </tabBar>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Journey Together" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABE-S1-i5c">
                     <rect key="frame" x="30" y="425" width="120" height="30"/>
                     <constraints>
@@ -284,7 +260,7 @@
                     </connections>
                 </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="IPv-eC-4l5">
-                    <rect key="frame" x="30" y="670" width="333" height="246"/>
+                    <rect key="frame" x="30" y="670" width="333" height="296"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="N5Z-aj-o34">
                         <size key="itemSize" width="128" height="128"/>
@@ -293,14 +269,16 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Frd-6K-5s4">
+                    <rect key="frame" x="0.0" y="188" width="393" height="738"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
-                <constraint firstItem="B7C-XZ-sYS" firstAttribute="top" secondItem="IPv-eC-4l5" secondAttribute="bottom" id="1yN-EM-5Qz"/>
                 <constraint firstItem="B1I-nx-9If" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="5dB-qk-nuR"/>
-                <constraint firstItem="B7C-XZ-sYS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5hs-4O-Paz"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="B7C-XZ-sYS" secondAttribute="bottom" id="8F2-Wa-QF6"/>
                 <constraint firstItem="SSa-aJ-B9w" firstAttribute="top" secondItem="ABE-S1-i5c" secondAttribute="bottom" constant="8" id="BEs-gX-pcp"/>
                 <constraint firstItem="B1I-nx-9If" firstAttribute="top" secondItem="SSa-aJ-B9w" secondAttribute="bottom" constant="5" id="HOO-lB-7wC"/>
                 <constraint firstItem="gGG-bw-7uY" firstAttribute="top" secondItem="SSa-aJ-B9w" secondAttribute="bottom" constant="5" id="JFD-fG-5qd"/>
@@ -308,6 +286,7 @@
                 <constraint firstItem="IPv-eC-4l5" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="MiS-mX-bBP"/>
                 <constraint firstItem="SSa-aJ-B9w" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="NTd-Ur-aA9"/>
                 <constraint firstItem="ISU-fv-UDo" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-30" id="RLc-3T-C3c"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="IPv-eC-4l5" secondAttribute="bottom" id="WYX-0o-1Cq"/>
                 <constraint firstItem="IPv-eC-4l5" firstAttribute="top" secondItem="gGG-bw-7uY" secondAttribute="bottom" constant="2" id="Y3f-oV-eYH"/>
                 <constraint firstItem="td4-EH-jz4" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="YsV-eI-2uC"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="IPv-eC-4l5" secondAttribute="trailing" constant="30" id="b36-cC-63v"/>
@@ -315,31 +294,19 @@
                 <constraint firstItem="td4-EH-jz4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dHa-mr-X2Y"/>
                 <constraint firstItem="ABE-S1-i5c" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="fN9-iL-G44"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gGG-bw-7uY" secondAttribute="trailing" constant="30" id="oDJ-4l-Tjd"/>
-                <constraint firstItem="B7C-XZ-sYS" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="sqa-ip-J3R"/>
                 <constraint firstItem="ABE-S1-i5c" firstAttribute="top" secondItem="td4-EH-jz4" secondAttribute="bottom" constant="25" id="wzc-eT-7QA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SSa-aJ-B9w" secondAttribute="trailing" constant="30" id="yjS-Iz-n30"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <point key="canvasLocation" x="54.198473282442748" y="-11.267605633802818"/>
         </view>
-        <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Frd-6K-5s4">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="790" y="97"/>
-        </tableView>
     </objects>
     <resources>
         <image name="airplane" catalog="system" width="128" height="115"/>
         <image name="bus.doubledecker" catalog="system" width="126" height="128"/>
         <image name="ferry.fill" catalog="system" width="126" height="128"/>
-        <image name="homekit" catalog="system" width="128" height="104"/>
-        <image name="house" catalog="system" width="128" height="104"/>
         <image name="house.lodge" catalog="system" width="128" height="55"/>
-        <image name="percent.ar" catalog="system" width="118" height="128"/>
-        <image name="person.circle" catalog="system" width="128" height="123"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
-        <image name="ticket" catalog="system" width="128" height="86"/>
         <image name="train.side.front.car" catalog="system" width="128" height="72"/>
         <systemColor name="labelColor">
             <color red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

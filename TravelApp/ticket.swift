@@ -39,25 +39,68 @@ class FlightTicketView: UIView {
         let centerY = height / 2
 
         let path = UIBezierPath()
+
+        // Top-left Corner
         path.move(to: CGPoint(x: cornerRadius, y: 0))
         path.addLine(to: CGPoint(x: width - cornerRadius, y: 0))
-        path.addArc(withCenter: CGPoint(x: width - cornerRadius, y: cornerRadius), radius: cornerRadius, startAngle: -CGFloat.pi / 2, endAngle: 0, clockwise: true)
+
+        // Top-right Corner
+        path.addArc(withCenter: CGPoint(x: width - cornerRadius, y: cornerRadius),
+                    radius: cornerRadius,
+                    startAngle: -CGFloat.pi / 2,
+                    endAngle: 0,
+                    clockwise: true)
+
+        // Right Notch
         path.addLine(to: CGPoint(x: width, y: centerY - notchRadius))
-        path.addArc(withCenter: CGPoint(x: width, y: centerY), radius: notchRadius, startAngle: -CGFloat.pi / 2, endAngle: CGFloat.pi / 2, clockwise: false)
+        path.addArc(withCenter: CGPoint(x: width, y: centerY),
+                    radius: notchRadius,
+                    startAngle: -CGFloat.pi / 2,
+                    endAngle: CGFloat.pi / 2,
+                    clockwise: false)
         path.addLine(to: CGPoint(x: width, y: height - cornerRadius))
-        path.addArc(withCenter: CGPoint(x: width - cornerRadius, y: height - cornerRadius), radius: cornerRadius, startAngle: 0, endAngle: CGFloat.pi / 2, clockwise: true)
+
+        // Bottom-right Corner
+        path.addArc(withCenter: CGPoint(x: width - cornerRadius, y: height - cornerRadius),
+                    radius: cornerRadius,
+                    startAngle: 0,
+                    endAngle: CGFloat.pi / 2,
+                    clockwise: true)
+
         path.addLine(to: CGPoint(x: cornerRadius, y: height))
-        path.addArc(withCenter: CGPoint(x: cornerRadius, y: height - cornerRadius), radius: cornerRadius, startAngle: CGFloat.pi / 2, endAngle: CGFloat.pi, clockwise: true)
+
+        // Bottom-left Corner
+        path.addArc(withCenter: CGPoint(x: cornerRadius, y: height - cornerRadius),
+                    radius: cornerRadius,
+                    startAngle: CGFloat.pi / 2,
+                    endAngle: CGFloat.pi,
+                    clockwise: true)
+
+        // Left Notch
         path.addLine(to: CGPoint(x: 0, y: centerY + notchRadius))
-        path.addArc(withCenter: CGPoint(x: 0, y: centerY), radius: notchRadius, startAngle: CGFloat.pi / 2, endAngle: -CGFloat.pi / 2, clockwise: true)
+        path.addArc(withCenter: CGPoint(x: 0, y: centerY),
+                    radius: notchRadius,
+                    startAngle: CGFloat.pi / 2,
+                    endAngle: -CGFloat.pi / 2,
+                    clockwise: true)
+        
         path.addLine(to: CGPoint(x: 0, y: cornerRadius))
-        path.addArc(withCenter: CGPoint(x: cornerRadius, y: cornerRadius), radius: cornerRadius, startAngle: CGFloat.pi, endAngle: -CGFloat.pi / 2, clockwise: true)
+
+        // Top-left Corner
+        path.addArc(withCenter: CGPoint(x: cornerRadius, y: cornerRadius),
+                    radius: cornerRadius,
+                    startAngle: CGFloat.pi,
+                    endAngle: -CGFloat.pi / 2,
+                    clockwise: true)
+
         path.close()
 
         let maskLayer = CAShapeLayer()
         maskLayer.path = path.cgPath
         layer.mask = maskLayer
     }
+
+
 
     private func applyGradientBackground() {
         let gradientLayer = CAGradientLayer()
