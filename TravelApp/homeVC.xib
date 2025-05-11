@@ -244,6 +244,9 @@
                     </constraints>
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="See All"/>
+                    <connections>
+                        <action selector="SeeAllCities:" destination="-1" eventType="touchUpInside" id="8gA-YW-0ym"/>
+                    </connections>
                 </button>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleAspectFit" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="SSa-aJ-B9w">
                     <rect key="frame" x="30" y="463" width="333" height="180"/>
@@ -258,18 +261,37 @@
                         <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                     </collectionViewFlowLayout>
                 </collectionView>
-                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Frd-6K-5s4">
-                    <rect key="frame" x="0.0" y="187" width="393" height="527"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                </tableView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hotels Recommended for You" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1I-nx-9If">
+                    <rect key="frame" x="25" y="648" width="170" height="14.333333333333371"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="170" id="xGd-Dk-n0F"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gGG-bw-7uY">
+                    <rect key="frame" x="273" y="648" width="90" height="20"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="20" id="Cmy-B2-Lud"/>
+                        <constraint firstAttribute="width" constant="90" id="aRM-w8-rd3"/>
+                    </constraints>
+                    <state key="normal" title="Button"/>
+                    <buttonConfiguration key="configuration" style="plain" title="See All"/>
+                    <connections>
+                        <action selector="SeeAllHotels:" destination="-1" eventType="touchUpInside" id="7w9-18-w1R"/>
+                    </connections>
+                </button>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="B1I-nx-9If" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="25" id="5dB-qk-nuR"/>
                 <constraint firstItem="B7C-XZ-sYS" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="5hs-4O-Paz"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="B7C-XZ-sYS" secondAttribute="bottom" id="8F2-Wa-QF6"/>
                 <constraint firstItem="SSa-aJ-B9w" firstAttribute="top" secondItem="ABE-S1-i5c" secondAttribute="bottom" constant="8" id="BEs-gX-pcp"/>
+                <constraint firstItem="B1I-nx-9If" firstAttribute="top" secondItem="SSa-aJ-B9w" secondAttribute="bottom" constant="5" id="HOO-lB-7wC"/>
+                <constraint firstItem="gGG-bw-7uY" firstAttribute="top" secondItem="SSa-aJ-B9w" secondAttribute="bottom" constant="5" id="JFD-fG-5qd"/>
                 <constraint firstItem="td4-EH-jz4" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="M8D-eI-Z7R"/>
                 <constraint firstItem="SSa-aJ-B9w" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="NTd-Ur-aA9"/>
                 <constraint firstItem="ISU-fv-UDo" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="-30" id="RLc-3T-C3c"/>
@@ -277,12 +299,19 @@
                 <constraint firstItem="ISU-fv-UDo" firstAttribute="top" secondItem="td4-EH-jz4" secondAttribute="bottom" constant="25" id="bMH-No-3ft"/>
                 <constraint firstItem="td4-EH-jz4" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="dHa-mr-X2Y"/>
                 <constraint firstItem="ABE-S1-i5c" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="30" id="fN9-iL-G44"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="gGG-bw-7uY" secondAttribute="trailing" constant="30" id="oDJ-4l-Tjd"/>
                 <constraint firstItem="B7C-XZ-sYS" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="sqa-ip-J3R"/>
                 <constraint firstItem="ABE-S1-i5c" firstAttribute="top" secondItem="td4-EH-jz4" secondAttribute="bottom" constant="25" id="wzc-eT-7QA"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="SSa-aJ-B9w" secondAttribute="trailing" constant="30" id="yjS-Iz-n30"/>
             </constraints>
             <point key="canvasLocation" x="54.198473282442748" y="-11.267605633802818"/>
         </view>
+        <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="Frd-6K-5s4">
+            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <point key="canvasLocation" x="790" y="97"/>
+        </tableView>
     </objects>
     <resources>
         <image name="airplane" catalog="system" width="128" height="115"/>

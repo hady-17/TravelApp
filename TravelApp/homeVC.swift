@@ -157,6 +157,10 @@ class homeVC: UIViewController {
 
     }
 
+    @IBAction func SeeAllCities(_ sender: Any) {
+    }
+    @IBAction func SeeAllHotels(_ sender: UIButton) {
+    }
     
 
 
