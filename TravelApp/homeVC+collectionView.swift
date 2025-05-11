@@ -47,11 +47,11 @@ extension homeVC :UICollectionViewDelegate,UICollectionViewDataSource,UICollecti
             return cell
         }
         else   {
-            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "cityCell", for: indexPath) as! citiesCell
+            let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "hotelsCell", for: indexPath) as! hotelsCell
             if let data = vm.getDataInRow(indexPath.row){
                 cell.setUpData(data: data)
                 if let urlString = data.url , let url = URL(string: urlString){
-                    loadImage(from: url, into: cell.imageView)
+                    loadImage(from: url, into: cell.hotelImage)
                 }
             }
             cell.layer.cornerRadius = 8
@@ -84,7 +84,7 @@ extension homeVC :UICollectionViewDelegate,UICollectionViewDataSource,UICollecti
         if collectionView.tag == 1{
             size = CGSize(width: 150, height: 170)}
         else {
-           size = CGSize(width: 160, height: 80)
+           size = CGSize(width: 380, height: 80)
         }
         return size
     }

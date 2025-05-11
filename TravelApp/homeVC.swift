@@ -53,8 +53,8 @@ class homeVC: UIViewController {
     @IBOutlet weak var hotelsCollectionView: UICollectionView!
     {
         didSet{
-            let cell = UINib(nibName: "citiesCell", bundle: nil)
-            hotelsCollectionView.register(cell, forCellWithReuseIdentifier: "cityCell")
+            let cell = UINib(nibName: "hotelsCell", bundle: nil)
+            hotelsCollectionView.register(cell, forCellWithReuseIdentifier: "hotelsCell")
             hotelsCollectionView.tag = 2
             hotelsCollectionView.dataSource = self
             hotelsCollectionView.delegate = self
@@ -141,11 +141,51 @@ class homeVC: UIViewController {
     }
 
     @IBAction func SeeAllCities(_ sender: Any) {
+        let secondVC = cities()
+        secondVC.CitiesData = vm.cityData
+        secondVC.modalPresentationStyle = .fullScreen
+        present(secondVC, animated: true, completion: nil)
+              //  navigationController?.pushViewController(secondVC, animated: true)
     }
     @IBAction func SeeAllHotels(_ sender: UIButton) {
+        let secondVC = cities()
+        secondVC.CitiesData = vm.cityData
+        secondVC.modalPresentationStyle = .fullScreen
+        present(secondVC, animated: true, completion: nil)
     }
     
-
-
+    @IBAction func trainButtomPressed(_ sender: UIButton) {
+        let secondVC = cities()
+        secondVC.CitiesData = vm.cityData
+        secondVC.modalPresentationStyle = .fullScreen
+        present(secondVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func hotelsButtomPressed(_ sender: UIButton) {
+        let secondVC = cities()
+        secondVC.CitiesData = vm.cityData
+        secondVC.modalPresentationStyle = .fullScreen
+        present(secondVC, animated: true, completion: nil)
+    }
+    @IBAction func busButtomPressed(_ sender: UIButton) {
+        let secondVC = cities()
+        secondVC.CitiesData = vm.cityData
+        secondVC.modalPresentationStyle = .fullScreen
+        present(secondVC, animated: true, completion: nil)
+        
+    }
+    @IBAction func flightsButtomPressed(_ sender: UIButton) {
+        let secondVC = cities()
+        secondVC.CitiesData = vm.cityData
+        secondVC.modalPresentationStyle = .fullScreen
+        present(secondVC, animated: true, completion: nil)
+    }
+    
+    @IBAction func ferryButtomPressed(_ sender: UIButton) {
+        let secondVC = cities()
+        secondVC.CitiesData = vm.cityData
+        secondVC.modalPresentationStyle = .fullScreen
+        present(secondVC, animated: true, completion: nil)
+    }
 }
 

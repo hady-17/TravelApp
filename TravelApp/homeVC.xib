@@ -94,7 +94,7 @@
                                                 <color key="baseBackgroundColor" red="0.0" green="0.49772471010000002" blue="0.33509969410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </buttonConfiguration>
                                             <connections>
-                                                <action selector="flyButton:" destination="-1" eventType="touchUpInside" id="43X-r7-gdC"/>
+                                                <action selector="flightsButtomPressed:" destination="-1" eventType="touchUpInside" id="QOD-t8-1SV"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="flights" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sx6-ic-Dm7">
@@ -114,6 +114,9 @@
                                             <buttonConfiguration key="configuration" style="filled" image="house.lodge" catalog="system" cornerStyle="capsule">
                                                 <color key="baseBackgroundColor" red="0.0" green="0.49772471010000002" blue="0.33509969410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="hotelsButtomPressed:" destination="-1" eventType="touchUpInside" id="GUd-9p-yls"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="hotels" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UW4-xK-Ao7">
                                             <rect key="frame" x="0.0" y="34.333333333333371" width="50.666666666666664" height="20.333333333333329"/>
@@ -133,7 +136,7 @@
                                                 <color key="baseBackgroundColor" red="0.0" green="0.49772471010000002" blue="0.33509969410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </buttonConfiguration>
                                             <connections>
-                                                <action selector="trainButton:" destination="-1" eventType="touchUpInside" id="qyz-se-Gji"/>
+                                                <action selector="trainButtomPressed:" destination="-1" eventType="touchUpInside" id="hIT-bW-lOF"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="trains" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WVL-2B-Z92">
@@ -153,6 +156,9 @@
                                             <buttonConfiguration key="configuration" style="filled" image="ferry.fill" catalog="system" cornerStyle="capsule">
                                                 <color key="baseBackgroundColor" red="0.0" green="0.49772471010000002" blue="0.33509969410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="ferryButtomPressed:" destination="-1" eventType="touchUpInside" id="ZaY-9M-mla"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ferry" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJd-Kg-CWv">
                                             <rect key="frame" x="0.0" y="34.333333333333371" width="50.666666666666664" height="20.333333333333329"/>
@@ -171,6 +177,9 @@
                                             <buttonConfiguration key="configuration" style="filled" image="bus.doubledecker" catalog="system" cornerStyle="capsule">
                                                 <color key="baseBackgroundColor" red="0.0" green="0.49772471010000002" blue="0.33509969410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </buttonConfiguration>
+                                            <connections>
+                                                <action selector="busButtomPressed:" destination="-1" eventType="touchUpInside" id="HmZ-sk-ebZ"/>
+                                            </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="bus" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFq-cN-y48">
                                             <rect key="frame" x="0.0" y="34.333333333333371" width="50.666666666666664" height="20.333333333333329"/>

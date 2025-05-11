@@ -7,7 +7,7 @@
 
 import Foundation
 import UIKit
-extension homeVC : UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate{
+extension homeVC :  UITableViewDelegate,UITableViewDataSource,UISearchBarDelegate{
     
 
 
