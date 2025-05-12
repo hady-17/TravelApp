@@ -1,90 +1,192 @@
 import UIKit
-import Localize_Swift
 
 class getStartedVC: UIViewController {
 
+    let cardView = UIView()
+    let titleLabel = UILabel()
+    let startButton = UIButton(type: .system)
     
-    @IBOutlet weak var backgroundImageView: UIImageView!
-    @IBOutlet weak var logoImageView: UIImageView!
-    @IBOutlet weak var cardView: UIView!
-    @IBOutlet weak var exploreLabel: UILabel!
-    @IBOutlet weak var journeyButton: UIButton!
-    @IBOutlet weak var languageButton: UIButton!
 
-   
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        setupUI()
+    private let languageKey = "selectedLanguage"
+       private var currentLanguage: String {
+           get {
+               return UserDefaults.standard.string(forKey: languageKey) ?? "en"
+           }
+           set {
+               UserDefaults.standard.set(newValue, forKey: languageKey)
+               UserDefaults.standard.synchronize()
+           }
+       }
+
+       override func viewDidLoad() {
+           super.viewDidLoad()
+           setupUI()
+
+               navigationItem.rightBarButtonItem = UIBarButtonItem(
+               title: displayName(for: currentLanguage),
+               style: .plain,
+               target: self,
+               action: #selector(showLanguageSelector)
+           )
+           navigationController?.setNavigationBarHidden(false, animated: false)
+           navigationItem.rightBarButtonItem?.tintColor = .white
+           updateLocalizedText()
+       }
+
+    private func displayName(for code: String) -> String {
+        switch code {
+        case "en": return "English ˅"
+        case "ar": return "العربية ˅"
+        default: return "Language ˅"
+        }
     }
 
-    
+
+       @objc func navigateToSignIn() {
+           let signInVC = signInVC()
+           navigationController?.pushViewController(signInVC, animated: true)
+       }
+
+       @objc func showLanguageSelector() {
+           let alert = UIAlertController(title: nil, message: nil, preferredStyle: .actionSheet)
+
+           let languages = [
+               ("en", "English"),
+               ("ar", "العربية")
+           ]
+
+           for (code, name) in languages {
+               let action = UIAlertAction(title: name, style: .default) { _ in
+                   self.currentLanguage = code
+                   self.updateLocalizedText()
+               }
+               alert.addAction(action)
+           }
+
+           alert.addAction(UIAlertAction(title: "Cancel", style: .cancel))
+
+           if let popover = alert.popoverPresentationController {
+               popover.barButtonItem = navigationItem.rightBarButtonItem
+           }
+
+           present(alert, animated: true)
+       }
+
+
+    private func updateLocalizedText() {
+        navigationItem.rightBarButtonItem?.title = displayName(for: currentLanguage)
+        titleLabel.text = "Ready to explore beyond boundaries?"
+        startButton.setTitle("Your Journey Starts Here ", for: .normal)
+    }
+
+    private func localized(_ key: String) -> String {
+        guard let path = Bundle.main.path(forResource: currentLanguage, ofType: "lproj"),
+              let bundle = Bundle(path: path) else {
+            return key
+        }
+        return NSLocalizedString(key, tableName: nil, bundle: bundle, value: "", comment: "")
+    }
+
     private func setupUI() {
         
-        backgroundImageView.image = UIImage(named: "background")
+        let backgroundImageView = UIImageView(frame: view.bounds)
+        backgroundImageView.image = UIImage(named: "Background")
         backgroundImageView.contentMode = .scaleAspectFill
+        backgroundImageView.clipsToBounds = true
+        backgroundImageView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        view.insertSubview(backgroundImageView, at: 0)
 
         
-        logoImageView.image = UIImage(named: "travelin_logo")
-        logoImageView.contentMode = .scaleAspectFit
+        cardView.backgroundColor = .white
+        cardView.layer.cornerRadius = 25
+        cardView.layer.masksToBounds = true
+        cardView.translatesAutoresizingMaskIntoConstraints = false
+        view.addSubview(cardView)
 
-        
-        cardView.layer.cornerRadius = 24
-        cardView.layer.shadowColor = UIColor.black.cgColor
-        cardView.layer.shadowOpacity = 0.1
-        cardView.layer.shadowOffset = CGSize(width: 0, height: 4)
-        cardView.layer.shadowRadius = 10
+        NSLayoutConstraint.activate([
+            cardView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            cardView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            cardView.bottomAnchor.constraint(equalTo: view.bottomAnchor),
+            cardView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.3)
+        ])
 
-        
-        exploreLabel.text = "Ready to explore beyond boundaries?".localized()
-        exploreLabel.textAlignment = .center
-        exploreLabel.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
-        exploreLabel.textColor = .darkText
+        // Title label
+        titleLabel.textAlignment = .center
+        titleLabel.font = UIFont.systemFont(ofSize: 26, weight: .semibold)
+        titleLabel.textColor = UIColor(red: 0/255, green: 122/255, blue: 188/255, alpha: 1)
+        titleLabel.numberOfLines = 0
+        titleLabel.translatesAutoresizingMaskIntoConstraints = false
+        cardView.addSubview(titleLabel)
 
-        
-        journeyButton.setTitle("Your Journey Starts Here ✈️".localized(), for: .normal)
-        journeyButton.backgroundColor = UIColor.systemTeal
-        journeyButton.setTitleColor(.white, for: .normal)
-        journeyButton.layer.cornerRadius = 12
-        journeyButton.addTarget(self, action: #selector(journeyButtonTapped), for: .touchUpInside)
+        // Start button
+        startButton.layer.cornerRadius = 22
+        startButton.translatesAutoresizingMaskIntoConstraints = false
+        startButton.backgroundColor = UIColor(red: 0/255, green: 122/255, blue: 188/255, alpha: 1)
+        startButton.setTitleColor(.white, for: .normal)
+        startButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
+        startButton.addTarget(self, action: #selector(navigateToSignIn), for: .touchUpInside)
 
-        
-        languageButton.setTitle("English ⌄", for: .normal)
-        languageButton.setTitleColor(.white, for: .normal)
-        languageButton.addTarget(self, action: #selector(showLanguageOptions), for: .touchUpInside)
+        // Content configuration
+        startButton.titleLabel?.numberOfLines = 1
+        startButton.titleLabel?.lineBreakMode = .byTruncatingTail
+        startButton.setContentHuggingPriority(.required, for: .horizontal)
+        startButton.setContentCompressionResistancePriority(.required, for: .horizontal)
 
-        
-        animateEntrance()
-    }
+        // White airplane icon
+        let airplaneImage = UIImage(systemName: "airplane")?.withRenderingMode(.alwaysTemplate)
+        startButton.setImage(airplaneImage, for: .normal)
+        startButton.tintColor = .white
+        startButton.semanticContentAttribute = .forceRightToLeft
+        startButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: -10)
+        startButton.titleEdgeInsets = .zero
 
-   
-    @objc private func journeyButtonTapped() {
-        let signInVC = signInVC(nibName: "signInVC", bundle: nil)
-        navigationController?.pushViewController(signInVC, animated: true)
-    }
-
-    @objc private func showLanguageOptions() {
-        let alert = UIAlertController(title: "Choose Language", message: nil, preferredStyle: .actionSheet)
-        let languages = ["en": "English", "fr": "Français", "ar": "العربية"]
-
-        for (code, name) in languages {
-            alert.addAction(UIAlertAction(title: name, style: .default, handler: { _ in
-                Localize.setCurrentLanguage(code)
-                self.setupUI() // refresh labels
-            }))
+        // Flip the airplane image (only) so it points right
+        DispatchQueue.main.async {
+            self.startButton.imageView?.transform = CGAffineTransform(scaleX: -1, y: 1)
         }
 
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
-        present(alert, animated: true)
-    }
 
-    
-    private func animateEntrance() {
-        cardView.alpha = 0
-        cardView.transform = CGAffineTransform(translationX: 0, y: 50)
 
-        UIView.animate(withDuration: 0.6, delay: 0.2, options: [.curveEaseOut], animations: {
-            self.cardView.alpha = 1
-            self.cardView.transform = .identity
-        }, completion: nil)
+        // Icon alignment
+        if let imageView = startButton.imageView {
+            
+        }
+        startButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: -10)
+        startButton.titleEdgeInsets = UIEdgeInsets.zero
+
+        // Halo / glow effect
+        startButton.layer.shadowColor = UIColor(red: 0/255, green: 122/255, blue: 188/255, alpha: 0.4).cgColor
+        startButton.layer.shadowOpacity = 0.6
+        startButton.layer.shadowOffset = CGSize(width: 0, height: 4)
+        startButton.layer.shadowRadius = 10
+        startButton.layer.masksToBounds = false
+
+        cardView.addSubview(startButton)
+
+        NSLayoutConstraint.activate([
+            titleLabel.topAnchor.constraint(equalTo: cardView.topAnchor, constant: 30),
+            titleLabel.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 16),
+            titleLabel.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -16),
+
+            startButton.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 32),
+            startButton.leadingAnchor.constraint(equalTo: cardView.leadingAnchor, constant: 40),
+            startButton.trailingAnchor.constraint(equalTo: cardView.trailingAnchor, constant: -40),
+            startButton.heightAnchor.constraint(equalToConstant: 44)
+        ])
+
+        // Centered logo
+        let logoImageView = UIImageView()
+        logoImageView.image = UIImage(named: "Logo_GetStarted")
+        logoImageView.translatesAutoresizingMaskIntoConstraints = false
+        logoImageView.contentMode = .scaleAspectFit
+        view.addSubview(logoImageView)
+
+        NSLayoutConstraint.activate([
+            logoImageView.centerXAnchor.constraint(equalTo: view.centerXAnchor),
+            logoImageView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 110),
+            logoImageView.widthAnchor.constraint(equalToConstant: 234),
+            logoImageView.heightAnchor.constraint(equalToConstant: 98)
+        ])
+        
     }
 }
