@@ -19,14 +19,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         accVC.tabBarItem.selectedImage = UIImage(systemName: "person.circle.fill")
         accVC.tabBarItem.title = "account"
         
-        let dealSB = UIStoryboard(name:"deals", bundle: nil)
-        let dealVC = dealSB.instantiateViewController(withIdentifier: "dealsID")
+        let dealSB = UIStoryboard(name:"deal", bundle: nil)
+        let dealVC = dealSB.instantiateViewController(withIdentifier: "dealID")
         dealVC.tabBarItem.image = UIImage(systemName: "percent.ar")
         dealVC.tabBarItem.selectedImage = UIImage(systemName: "percent")
         dealVC.tabBarItem.title = "Deals"
         
         let orSB = UIStoryboard(name: "orders", bundle: nil)
-        let orVC = orSB.instantiateViewController(withIdentifier: "ordersid")
+        let orVC = orSB.instantiateViewController(withIdentifier: "orderID")
         orVC.tabBarItem.image = UIImage(systemName: "ticket")
         orVC.tabBarItem.selectedImage = UIImage(systemName: "ticket.fill")
         orVC.tabBarItem.title = "Orders"

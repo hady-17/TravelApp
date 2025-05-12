@@ -90,7 +90,7 @@ extension homeVC :UICollectionViewDelegate,UICollectionViewDataSource,UICollecti
     }
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         if collectionView.tag == 1{
-            let nextVC = cityDetailsVC()
+            let nextVC = CityDetailsVC()
             nextVC.Data = vm.cityData?[indexPath.row]
             nextVC.modalPresentationStyle = .fullScreen
             present(nextVC, animated: true)
@@ -98,7 +98,7 @@ extension homeVC :UICollectionViewDelegate,UICollectionViewDataSource,UICollecti
             
         }
         else{
-            let nextVC = cityDetailsVC()
+            let nextVC = CityDetailsVC()
             nextVC.Data = vm.cityData?[indexPath.row]
             nextVC.modalPresentationStyle = .fullScreen
             present(nextVC, animated: true)
