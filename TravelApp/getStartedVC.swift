@@ -110,7 +110,7 @@ class getStartedVC: UIViewController {
             cardView.heightAnchor.constraint(equalTo: view.heightAnchor, multiplier: 0.3)
         ])
 
-        // Title label
+       
         titleLabel.textAlignment = .center
         titleLabel.font = UIFont.systemFont(ofSize: 26, weight: .semibold)
         titleLabel.textColor = UIColor(red: 0/255, green: 122/255, blue: 188/255, alpha: 1)
@@ -118,7 +118,7 @@ class getStartedVC: UIViewController {
         titleLabel.translatesAutoresizingMaskIntoConstraints = false
         cardView.addSubview(titleLabel)
 
-        // Start button
+        
         startButton.layer.cornerRadius = 22
         startButton.translatesAutoresizingMaskIntoConstraints = false
         startButton.backgroundColor = UIColor(red: 0/255, green: 122/255, blue: 188/255, alpha: 1)
@@ -126,13 +126,13 @@ class getStartedVC: UIViewController {
         startButton.titleLabel?.font = UIFont.systemFont(ofSize: 16, weight: .semibold)
         startButton.addTarget(self, action: #selector(navigateToSignIn), for: .touchUpInside)
 
-        // Content configuration
+        
         startButton.titleLabel?.numberOfLines = 1
         startButton.titleLabel?.lineBreakMode = .byTruncatingTail
         startButton.setContentHuggingPriority(.required, for: .horizontal)
         startButton.setContentCompressionResistancePriority(.required, for: .horizontal)
 
-        // White airplane icon
+       
         let airplaneImage = UIImage(systemName: "airplane")?.withRenderingMode(.alwaysTemplate)
         startButton.setImage(airplaneImage, for: .normal)
         startButton.tintColor = .white
@@ -140,21 +140,21 @@ class getStartedVC: UIViewController {
         startButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: -10)
         startButton.titleEdgeInsets = .zero
 
-        // Flip the airplane image (only) so it points right
+       
         DispatchQueue.main.async {
             self.startButton.imageView?.transform = CGAffineTransform(scaleX: -1, y: 1)
         }
 
 
 
-        // Icon alignment
+        
         if let imageView = startButton.imageView {
             
         }
         startButton.imageEdgeInsets = UIEdgeInsets(top: 0, left: 10, bottom: 0, right: -10)
         startButton.titleEdgeInsets = UIEdgeInsets.zero
 
-        // Halo / glow effect
+        
         startButton.layer.shadowColor = UIColor(red: 0/255, green: 122/255, blue: 188/255, alpha: 0.4).cgColor
         startButton.layer.shadowOpacity = 0.6
         startButton.layer.shadowOffset = CGSize(width: 0, height: 4)
@@ -174,7 +174,7 @@ class getStartedVC: UIViewController {
             startButton.heightAnchor.constraint(equalToConstant: 44)
         ])
 
-        // Centered logo
+        
         let logoImageView = UIImageView()
         logoImageView.image = UIImage(named: "Logo_GetStarted")
         logoImageView.translatesAutoresizingMaskIntoConstraints = false
