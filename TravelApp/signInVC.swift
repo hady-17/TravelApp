@@ -277,8 +277,65 @@ class signInVC: UIViewController {
             return
         }
 
-        print("✅ Logging in with: \(email)")
-        // TODO: call backend or transition
+        loginUser(email: email, password: password)
+        
+    }
+
+    private func loginUser(email: String, password: String) {
+        guard let url = URL(string: "http://51.15.250.187:8006/api/method/login") else {
+            showAlert(title: "Error", message: "Invalid login URL.")
+            return
+        }
+
+        var request = URLRequest(url: url)
+        request.httpMethod = "POST"
+        request.setValue("application/json", forHTTPHeaderField: "Content-Type")
+
+        let requestBody: [String: String] = [
+            "usr": email,
+            "pwd": password
+        ]
+
+        do {
+            request.httpBody = try JSONSerialization.data(withJSONObject: requestBody, options: [])
+        } catch {
+            showAlert(title: "Error", message: "Failed to encode credentials.")
+            return
+        }
+
+        let task = URLSession.shared.dataTask(with: request) { data, response, error in
+            DispatchQueue.main.async {
+                if let error = error {
+                    self.showAlert(title: "Login Failed", message: error.localizedDescription)
+                    return
+                }
+
+                guard let httpResponse = response as? HTTPURLResponse else {
+                    self.showAlert(title: "Login Failed", message: "No response from server.")
+                    return
+                }
+
+                if httpResponse.statusCode == 200 {
+                    
+                    self.showAlert(title: "Success", message: "Logged in successfully!")
+                    // TODO: Navigate to HomeVC
+                    let nextVC = homeVC()
+                        nextVC.user = email
+                        self.navigationController?.pushViewController(nextVC, animated: true)
+                } else {
+                    
+                    if let data = data,
+                       let json = try? JSONSerialization.jsonObject(with: data, options: []) as? [String: Any],
+                       let message = json["message"] as? String {
+                        self.showAlert(title: "Login Failed", message: message)
+                    } else {
+                        self.showAlert(title: "Login Failed", message: "Invalid credentials or server error.")
+                    }
+                }
+            }
+        }
+
+        task.resume()
     }
 
 
