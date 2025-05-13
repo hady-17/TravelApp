@@ -45,6 +45,11 @@
 		A7B310D92DC22B8C0051D42A /* signInVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7B310D72DC22B8C0051D42A /* signInVC.xib */; };
 		A7B310DC2DC22BA90051D42A /* homeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7B310DA2DC22BA90051D42A /* homeVC.swift */; };
 		A7B310DD2DC22BA90051D42A /* homeVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A7B310DB2DC22BA90051D42A /* homeVC.xib */; };
+		A7FDC8032DD3E617007FD3B9 /* dealVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDC8022DD3E617007FD3B9 /* dealVC.swift */; };
+		A7FDC8052DD3E667007FD3B9 /* dealCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDC8042DD3E667007FD3B9 /* dealCell.swift */; };
+		A7FDC8072DD3E91B007FD3B9 /* FieldModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDC8062DD3E91B007FD3B9 /* FieldModel.swift */; };
+		A7FDC8092DD3E93C007FD3B9 /* inputCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDC8082DD3E93C007FD3B9 /* inputCell.swift */; };
+		A7FDC80B2DD3E96B007FD3B9 /* createAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7FDC80A2DD3E96B007FD3B9 /* createAccountVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -107,6 +112,11 @@
 		A7B310D72DC22B8C0051D42A /* signInVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = signInVC.xib; sourceTree = "<group>"; };
 		A7B310DA2DC22BA90051D42A /* homeVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeVC.swift; sourceTree = "<group>"; };
 		A7B310DB2DC22BA90051D42A /* homeVC.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = homeVC.xib; sourceTree = "<group>"; };
+		A7FDC8022DD3E617007FD3B9 /* dealVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dealVC.swift; sourceTree = "<group>"; };
+		A7FDC8042DD3E667007FD3B9 /* dealCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = dealCell.swift; sourceTree = "<group>"; };
+		A7FDC8062DD3E91B007FD3B9 /* FieldModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FieldModel.swift; sourceTree = "<group>"; };
+		A7FDC8082DD3E93C007FD3B9 /* inputCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = inputCell.swift; sourceTree = "<group>"; };
+		A7FDC80A2DD3E96B007FD3B9 /* createAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = createAccountVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +150,8 @@
 				A70B3F752DD1FFD700DAE8FC /* deal.storyboard */,
 				A70B3F762DD1FFD700DAE8FC /* orders.storyboard */,
 				A70B3F772DD1FFD700DAE8FC /* account.storyboard */,
+				A7FDC8022DD3E617007FD3B9 /* dealVC.swift */,
+				A7FDC80A2DD3E96B007FD3B9 /* createAccountVC.swift */,
 			);
 			path = "story board";
 			sourceTree = "<group>";
@@ -236,6 +248,7 @@
 			isa = PBXGroup;
 			children = (
 				A717418D2DC2C14300D2F227 /* homeModelView.swift */,
+				A7FDC8062DD3E91B007FD3B9 /* FieldModel.swift */,
 			);
 			path = ModelView;
 			sourceTree = "<group>";
@@ -251,6 +264,8 @@
 				A783295B2DC4B56300C53A01 /* searchTableCell.xib */,
 				A70B3F922DD200AD00DAE8FC /* cities.swift */,
 				A70B3F932DD200AD00DAE8FC /* cities.xib */,
+				A7FDC8042DD3E667007FD3B9 /* dealCell.swift */,
+				A7FDC8082DD3E93C007FD3B9 /* inputCell.swift */,
 			);
 			path = cell;
 			sourceTree = "<group>";
@@ -398,7 +413,10 @@
 			files = (
 				A765266C2DC3F93A00206D8A /* homeVC+elements.swift in Sources */,
 				A7B310D42DC22B720051D42A /* getStartedVC.swift in Sources */,
+				A7FDC8072DD3E91B007FD3B9 /* FieldModel.swift in Sources */,
 				A76526712DC4019600206D8A /* citiesCell.swift in Sources */,
+				A7FDC8092DD3E93C007FD3B9 /* inputCell.swift in Sources */,
+				A7FDC8032DD3E617007FD3B9 /* dealVC.swift in Sources */,
 				A70B3F8D2DD2000D00DAE8FC /* ticket.swift in Sources */,
 				A70B3F892DD1FFE200DAE8FC /* CityImageGallery.swift in Sources */,
 				A78646DA2DC200CA00073291 /* ViewController.swift in Sources */,
@@ -409,6 +427,7 @@
 				A70B3F852DD1FFE200DAE8FC /* BookNowButton.swift in Sources */,
 				A717418E2DC2C14300D2F227 /* homeModelView.swift in Sources */,
 				A7B310D82DC22B8C0051D42A /* signInVC.swift in Sources */,
+				A7FDC80B2DD3E96B007FD3B9 /* createAccountVC.swift in Sources */,
 				A70B3F842DD1FFE200DAE8FC /* CityHeaderView.swift in Sources */,
 				A717418C2DC2C12600D2F227 /* cityModel.swift in Sources */,
 				A765266A2DC3F30500206D8A /* homeVC+collectionView.swift in Sources */,
@@ -418,6 +437,7 @@
 				A70B3F872DD1FFE200DAE8FC /* CityInfoView.swift in Sources */,
 				A70B3F862DD1FFE200DAE8FC /* LikeButton.swift in Sources */,
 				A78646D62DC200CA00073291 /* AppDelegate.swift in Sources */,
+				A7FDC8052DD3E667007FD3B9 /* dealCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

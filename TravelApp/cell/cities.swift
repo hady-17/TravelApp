@@ -26,6 +26,9 @@ class cities: UIViewController {
         }
     }
     
+    @IBAction func backButtonPressed(_ sender: UIButton) {
+        dismiss(animated: true)
+    }
     /*
     // MARK: - Navigation
 
@@ -66,9 +69,23 @@ extension cities : UICollectionViewDataSource,UICollectionViewDelegate,UICollect
         cell.layer.shadowOffset = CGSize(width: 0, height: 4)
         cell.layer.shadowRadius = 6
         cell.layer.masksToBounds = false
+        
         cell.layer.borderColor =  CGColor(red: 0.5, green: 0.5, blue: 0.5, alpha: 1.0)
         cell.layer.borderWidth = 0.3
         return cell
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        5
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        5
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        CGSize(width: 185, height: 220)
+    }
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 5, left: 5, bottom: 5, right: 5)
     }
     func getDataInRow(_ index: Int) -> DataItem? {
         guard let Data = CitiesData, index >= 0 && index < Data.count else {

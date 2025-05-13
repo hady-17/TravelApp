@@ -36,6 +36,7 @@
                     <state key="normal" title="Button"/>
                     <buttonConfiguration key="configuration" style="plain" title="Back"/>
                     <connections>
+                        <action selector="backButtonPressed:" destination="-1" eventType="touchUpInside" id="LQM-xF-2Ey"/>
                         <action selector="backPressed:" destination="-1" eventType="touchUpInside" id="efM-K0-kHh"/>
                     </connections>
                 </button>

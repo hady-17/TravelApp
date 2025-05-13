@@ -22,3 +22,9 @@ struct ApiResponse: Codable {
     let total: Int?
     let data: [DataItem]?
 }
+struct Deal {
+    let destination: String
+    let price: String
+    let imageName: String
+    let systemIconName: String
+}

@@ -284,6 +284,11 @@
                         <constraint firstItem="kGN-J1-Aa7" firstAttribute="leading" secondItem="WQd-dX-Clg" secondAttribute="leading" constant="15" id="wsS-Dg-LQ7"/>
                     </constraints>
                 </view>
+                <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ice-E2-4jK">
+                    <rect key="frame" x="0.0" y="184" width="393" height="588"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="TwS-cm-FjQ"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -309,12 +314,6 @@
             </constraints>
             <point key="canvasLocation" x="538.16793893129773" y="78.873239436619727"/>
         </view>
-        <tableView hidden="YES" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="ice-E2-4jK">
-            <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-            <point key="canvasLocation" x="1192" y="73"/>
-        </tableView>
     </objects>
     <resources>
         <image name="airplane" catalog="system" width="128" height="115"/>
