@@ -284,7 +284,7 @@ class signInVC: UIViewController {
     }
 
     private func loginUser(email: String, password: String) {
-        guard let url = URL(string: "http://51.15.250.187:8006/api/method/login") else {
+        guard let url = URL(string: "https://reqres.in/api/login") else {
             showAlert(title: "Error", message: "Invalid login URL.")
             return
         }
@@ -293,10 +293,15 @@ class signInVC: UIViewController {
         request.httpMethod = "POST"
         request.setValue("application/json", forHTTPHeaderField: "Content-Type")
 
+//        let requestBody: [String: String] = [
+//            "usr": email,
+//            "pwd": password
+//        ]
         let requestBody: [String: String] = [
-            "usr": email,
-            "pwd": password
-        ]
+                  "email": email/*"eve.holt@reqres.in"*/,
+                  "password": password/*"cityslicka"*/
+              ]
+
 
         do {
             request.httpBody = try JSONSerialization.data(withJSONObject: requestBody, options: [])

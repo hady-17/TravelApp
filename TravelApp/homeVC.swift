@@ -17,7 +17,9 @@ class homeVC: UIViewController {
     {
         didSet{
             accountProfileImageView.image = UIImage(named: "user")
-            accountProfileImageView.layer.cornerRadius = 20
+            accountProfileImageView.layer.cornerRadius = 25
+
+            
         }
     }
     @IBOutlet weak var userNameLabel: UILabel!{
