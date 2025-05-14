@@ -20,7 +20,7 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View More" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yxH-JC-dpo">
-                    <rect key="frame" x="175" y="59" width="100" height="21"/>
+                    <rect key="frame" x="146.66666666666666" y="59" width="100" height="21"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="100" id="MlI-9d-4yT"/>
                     </constraints>
@@ -56,10 +56,10 @@
             <constraints>
                 <constraint firstItem="yxH-JC-dpo" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="02Q-dq-QLg"/>
                 <constraint firstItem="PC4-RT-1TE" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="15T-oq-KYI"/>
-                <constraint firstItem="yxH-JC-dpo" firstAttribute="leading" secondItem="PC4-RT-1TE" secondAttribute="trailing" constant="89" id="4bd-Vx-8XA"/>
                 <constraint firstItem="Rew-UX-fga" firstAttribute="top" secondItem="PC4-RT-1TE" secondAttribute="bottom" constant="1" id="5Gu-Cx-8LA"/>
                 <constraint firstItem="Rew-UX-fga" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" id="DW5-Ur-7Q4"/>
                 <constraint firstItem="Rew-UX-fga" firstAttribute="top" secondItem="yxH-JC-dpo" secondAttribute="bottom" constant="8" symbolic="YES" id="Sv4-NU-T9s"/>
+                <constraint firstItem="yxH-JC-dpo" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="Ud5-jq-Ztz"/>
                 <constraint firstItem="Rew-UX-fga" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" id="hJ3-Rm-l2Y"/>
                 <constraint firstItem="PC4-RT-1TE" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="52" id="vX0-xx-x9X"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Rew-UX-fga" secondAttribute="bottom" constant="13" id="wgg-JN-Qb5"/>

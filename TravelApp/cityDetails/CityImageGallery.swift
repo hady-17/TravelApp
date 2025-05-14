@@ -46,9 +46,9 @@ class CityImageGallery: UIView {
         // Clear existing views
         stackView.arrangedSubviews.forEach { $0.removeFromSuperview() }
         
-        for name in imageNames {
+        for i in 0..<4 {
             let imgView = UIImageView()
-            imgView.image = UIImage(named: name)
+            imgView.image = UIImage(named: "user")
             imgView.contentMode = .scaleAspectFill
             imgView.clipsToBounds = true
             imgView.layer.cornerRadius = 12

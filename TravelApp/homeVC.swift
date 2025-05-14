@@ -9,8 +9,31 @@ import UIKit
 
 class homeVC: UIViewController {
     let vm = viewModel()
+    var user : String? = "hady"
 
     @IBOutlet weak var ticketView: UIView!
+    
+    @IBOutlet weak var accountProfileImageView: UIImageView!
+    {
+        didSet{
+            accountProfileImageView.image = UIImage(named: "user")
+            accountProfileImageView.layer.cornerRadius = 25
+
+            
+        }
+    }
+    @IBOutlet weak var userNameLabel: UILabel!{
+        didSet{
+            userNameLabel.text = "Hello ," + String(user!.prefix(4))
+            
+        }
+    }
+    
+    @IBOutlet weak var coinLabel: UILabel!
+    {
+        didSet{
+            coinLabel.text = "2000 Coin"}
+    }
     
     private func setupBackgroundImage(){
         if let image = UIImage(named: "teal-color-solid-background-1920x1080"){viewContainer.backgroundColor = UIColor(patternImage: image)}

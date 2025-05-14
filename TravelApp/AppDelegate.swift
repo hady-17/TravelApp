@@ -41,8 +41,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let tbc = UITabBarController()
         tbc.viewControllers = [homevc,orVC,dealVC,accVC]
+        let vc = ViewController()
 //        let navController = UINavigationController(rootViewController: homevc)
-        window?.rootViewController = tbc
+        window?.rootViewController = vc
         window?.makeKeyAndVisible()
         return true
     }

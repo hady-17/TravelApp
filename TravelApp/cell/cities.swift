@@ -74,6 +74,12 @@ extension cities : UICollectionViewDataSource,UICollectionViewDelegate,UICollect
         cell.layer.borderWidth = 0.3
         return cell
     }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let nextVC = CityDetailsVC()
+        nextVC.Data = CitiesData![indexPath.row]
+        nextVC.modalPresentationStyle = .fullScreen
+        present(nextVC,animated: true)
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         5
