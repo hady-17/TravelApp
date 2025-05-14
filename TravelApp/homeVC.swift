@@ -9,6 +9,7 @@ import UIKit
 
 class homeVC: UIViewController {
     let vm = viewModel()
+    var user : String?
 
     @IBOutlet weak var ticketView: UIView!
     

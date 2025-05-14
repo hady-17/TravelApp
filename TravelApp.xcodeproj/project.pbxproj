@@ -25,6 +25,7 @@
 		A70B3F972DD2018C00DAE8FC /* hotelsCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A70B3F962DD2018C00DAE8FC /* hotelsCell.xib */; };
 		A717418C2DC2C12600D2F227 /* cityModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717418B2DC2C12600D2F227 /* cityModel.swift */; };
 		A717418E2DC2C14300D2F227 /* homeModelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A717418D2DC2C14300D2F227 /* homeModelView.swift */; };
+		A75F72032DD4851C00D80F78 /* tabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A75F72022DD4851C00D80F78 /* tabBarController.swift */; };
 		A765266A2DC3F30500206D8A /* homeVC+collectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A76526692DC3F30400206D8A /* homeVC+collectionView.swift */; };
 		A765266C2DC3F93A00206D8A /* homeVC+elements.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765266B2DC3F93A00206D8A /* homeVC+elements.swift */; };
 		A76526712DC4019600206D8A /* citiesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A765266F2DC4019600206D8A /* citiesCell.swift */; };
@@ -88,6 +89,7 @@
 		A70B3F962DD2018C00DAE8FC /* hotelsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = hotelsCell.xib; sourceTree = "<group>"; };
 		A717418B2DC2C12600D2F227 /* cityModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cityModel.swift; sourceTree = "<group>"; };
 		A717418D2DC2C14300D2F227 /* homeModelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = homeModelView.swift; sourceTree = "<group>"; };
+		A75F72022DD4851C00D80F78 /* tabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = tabBarController.swift; sourceTree = "<group>"; };
 		A76526692DC3F30400206D8A /* homeVC+collectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "homeVC+collectionView.swift"; sourceTree = "<group>"; };
 		A765266B2DC3F93A00206D8A /* homeVC+elements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "homeVC+elements.swift"; sourceTree = "<group>"; };
 		A765266F2DC4019600206D8A /* citiesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = citiesCell.swift; sourceTree = "<group>"; };
@@ -215,6 +217,7 @@
 				A76526692DC3F30400206D8A /* homeVC+collectionView.swift */,
 				A765266B2DC3F93A00206D8A /* homeVC+elements.swift */,
 				A70B3F8C2DD2000D00DAE8FC /* ticket.swift */,
+				A75F72022DD4851C00D80F78 /* tabBarController.swift */,
 			);
 			path = TravelApp;
 			sourceTree = "<group>";
@@ -428,6 +431,7 @@
 				A717418E2DC2C14300D2F227 /* homeModelView.swift in Sources */,
 				A7B310D82DC22B8C0051D42A /* signInVC.swift in Sources */,
 				A7FDC80B2DD3E96B007FD3B9 /* createAccountVC.swift in Sources */,
+				A75F72032DD4851C00D80F78 /* tabBarController.swift in Sources */,
 				A70B3F842DD1FFE200DAE8FC /* CityHeaderView.swift in Sources */,
 				A717418C2DC2C12600D2F227 /* cityModel.swift in Sources */,
 				A765266A2DC3F30500206D8A /* homeVC+collectionView.swift in Sources */,
