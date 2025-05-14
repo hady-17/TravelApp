@@ -42,7 +42,7 @@ extension homeVC :  UITableViewDelegate,UITableViewDataSource,UISearchBarDelegat
     }
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        let nextVC = cityDetailsVC()
+        let nextVC = CityDetailsVC()
         nextVC.Data = vm.cityData?[indexPath.row]
         nextVC.modalPresentationStyle = .fullScreen
         present(nextVC, animated: true)
