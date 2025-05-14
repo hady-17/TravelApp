@@ -13,9 +13,16 @@ class homeVC: UIViewController {
 
     @IBOutlet weak var ticketView: UIView!
     
+    @IBOutlet weak var accountProfileImageView: UIImageView!
+    {
+        didSet{
+            accountProfileImageView.image = UIImage(named: "user")
+            accountProfileImageView.layer.cornerRadius = 20
+        }
+    }
     @IBOutlet weak var userNameLabel: UILabel!{
         didSet{
-            userNameLabel.text = String(user!.prefix(4))
+            userNameLabel.text = "Hello ," + String(user!.prefix(4))
             
         }
     }

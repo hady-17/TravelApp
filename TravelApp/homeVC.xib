@@ -12,6 +12,7 @@
             <connections>
                 <outlet property="CitiesCollectionView" destination="fKm-0b-Y44" id="0Tf-wf-I4s"/>
                 <outlet property="SearchBar" destination="kGN-J1-Aa7" id="hkj-T2-wLo"/>
+                <outlet property="accountProfileImageView" destination="bNw-Wn-EZK" id="2eZ-hj-bht"/>
                 <outlet property="busButton" destination="Qf5-RC-hvf" id="Wzo-Xr-fW7"/>
                 <outlet property="busLabel" destination="HLe-fu-UYD" id="XGd-8N-gjc"/>
                 <outlet property="coinLabel" destination="7af-0D-MjF" id="DPv-Vd-elU"/>
@@ -328,11 +329,6 @@
             </constraints>
             <point key="canvasLocation" x="538.16793893129773" y="78.873239436619727"/>
         </view>
-        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="uF8-my-hpM">
-            <rect key="frame" x="0.0" y="0.0" width="28" height="28"/>
-            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-            <point key="canvasLocation" x="-70.229007633587784" y="-358.45070422535213"/>
-        </imageView>
     </objects>
     <resources>
         <image name="airplane" catalog="system" width="128" height="115"/>

@@ -83,7 +83,7 @@
 		A70B3F822DD1FFE100DAE8FC /* DescriptionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionView.swift; sourceTree = "<group>"; };
 		A70B3F832DD1FFE100DAE8FC /* VisitorsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VisitorsView.swift; sourceTree = "<group>"; };
 		A70B3F8C2DD2000D00DAE8FC /* ticket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ticket.swift; sourceTree = "<group>"; };
-		A70B3F8E2DD2003000DAE8FC /* hotelsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = hotelsCell.swift; sourceTree = "<group>"; };
+		A70B3F8E2DD2003000DAE8FC /* hotelsCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = hotelsCell.swift; path = TravelApp/cell/hotelsCell.swift; sourceTree = SOURCE_ROOT; };
 		A70B3F922DD200AD00DAE8FC /* cities.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = cities.swift; sourceTree = "<group>"; };
 		A70B3F932DD200AD00DAE8FC /* cities.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = cities.xib; sourceTree = "<group>"; };
 		A70B3F962DD2018C00DAE8FC /* hotelsCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = hotelsCell.xib; sourceTree = "<group>"; };
