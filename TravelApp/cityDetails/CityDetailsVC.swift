@@ -2,7 +2,6 @@ import UIKit
 
 class CityDetailsVC: UIViewController {
     var Data : DataItem?
-    
     let scrollView = UIScrollView()
     let contentView = UIView()
     var cityTitle = "Bali"
@@ -122,14 +121,13 @@ class CityDetailsVC: UIViewController {
         ])
     }
     
-    private func configureViews() {
-        cityHeaderView.configure(with: cityTitle)
-        cityImageGallery.configure(with: ["Bali", "Bali", "Bali", "Bali"])
-        cityInfoView.configure(title: "Bali", price: "120.50", location: "Indonesia", rating: "4.7")
-        visitorsView.configure(with: ["Bali", "Bali", "Bali"], extraCount: 4)
-        descriptionView.configure(
-            description: "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.",
-            review: "Lorem Ipsum has been widely used in the industry for decades. It is highly recommended by professionals for its ability to fill in spaces without distracting from the content. The consistency in the text ensures a balanced and professional appearance in design.")
-
+    func configureViews() {
+        cityHeaderView.configure(with: Data?.title ?? "user")
+        cityImageGallery.configure(with: [Data?.url ?? ""])
+        cityInfoView.configure(title: Data?.title ?? "Bali", price: "120.50", location: "Indonesia", rating: "4.7")
+        visitorsView.configure(with:["user1","user2","user3","user"	], extraCount: 4)
+        descriptionView.configure(description: Data?.description ?? "Great Place", review: "Excellent choice for travelers.")
     }
+    
+    
 }

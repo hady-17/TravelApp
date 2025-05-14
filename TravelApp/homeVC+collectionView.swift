@@ -8,6 +8,7 @@
 import Foundation
 import UIKit
 extension homeVC :UICollectionViewDelegate,UICollectionViewDataSource,UICollectionViewDelegateFlowLayout {
+  
     func loadImage(from url:URL,into imageView : UIImageView){
         URLSession.shared.dataTask(with: url){
             data,response,error in
@@ -69,6 +70,7 @@ extension homeVC :UICollectionViewDelegate,UICollectionViewDataSource,UICollecti
             
 //        return cell
     }
+    
     func numberOfSections(in collectionView: UICollectionView) -> Int {
         1
     }

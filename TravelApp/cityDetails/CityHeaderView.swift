@@ -10,7 +10,6 @@ import UIKit
 class CityHeaderView: UIView {
     let backgroundImageView = UIImageView()
     let overlayView = UIView()
-    let titleLabel = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -48,6 +47,34 @@ class CityHeaderView: UIView {
     }
     
     func configure(with imageName: String) {
-        backgroundImageView.image = UIImage(named: imageName)
+//        backgroundImageView.image = UIImage(named: imageName)
+        let image = backgroundImageView.image
+        
+        loadImage(from: imageName)
     }
+    
+                  private func loadImage(from urlString: String) {
+                      guard let url = URL(string: urlString) else {
+                          print("❌ Invalid URL: \(urlString)")
+                          return
+                      }
+
+                      URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
+                          if let error = error {
+                              print("❌ Image load error: \(error.localizedDescription)")
+                              return
+                          }
+
+                          guard let data = data, let image = UIImage(data: data) else {
+                              print("❌ Could not decode image data.")
+                              return
+                          }
+
+                          DispatchQueue.main.async {
+                              self?.backgroundImageView.image = image
+                          }
+                      }.resume()
+                  }
+
+
 }
